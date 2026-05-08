@@ -1,16 +1,41 @@
-# React + Vite
+## Planning & Logic
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+To build a Shopify app feature for marking products as "Featured", I would use Shopify Admin API along with Shopify Metafields.
 
-Currently, two official plugins are available:
+### Approach
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Each product would contain a custom metafield:
 
-## React Compiler
+featured: true / false
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+This metafield would determine whether the product is featured inside the merchant dashboard.
 
-## Expanding the ESLint configuration
+### Dashboard Flow
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. Fetch products from Shopify Admin API
+2. Store products in React state
+3. Display all products in a dashboard UI
+4. Allow merchants to toggle featured status
+5. Update featured state instantly in the UI
+6. Sync changes back to Shopify using API requests
+7. Filter and display featured products separately
+
+### Logic Used
+
+- React `useState` is used for managing product state
+- `map()` is used to update featured status dynamically
+- `filter()` is used to display featured products separately
+- Search functionality improves product discovery for merchants
+- Shopify App Web Components provide a Shopify-native admin experience
+
+### UX Improvements
+
+To improve usability, I added:
+
+- Product search
+- Featured badges
+- Dashboard statistics
+- Product thumbnails
+- Separate featured products section
+
+This structure keeps the feature scalable, reusable, and aligned with Shopify's admin experience.
