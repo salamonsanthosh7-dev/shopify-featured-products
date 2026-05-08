@@ -1,0 +1,18 @@
+body {
+  margin: 0;
+  padding: 20px;
+  background: #f6f6f7;
+  font-family: Arial, sans-serif;
+}
+img {
+  transition: 0.3s;
+}
+
+img:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+s-card {
+  display: block;
+  margin-bottom: 16px;
+}
